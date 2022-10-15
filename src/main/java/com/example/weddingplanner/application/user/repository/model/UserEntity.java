@@ -24,8 +24,10 @@ class UserEntity {
     String email;
     String firstName;
     String lastName;
-    @Column(length = 12)
+    @Column(name = "phone_number", length = 12)
     String phoneNumber;
     UUID keycloakId;
+    @Column(name = "is_active")
+    boolean active;
 
 }
