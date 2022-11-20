@@ -5,7 +5,6 @@ import com.example.weddingplanner.application.user.controller.dto.UserResponse;
 import com.example.weddingplanner.application.user.repository.model.UserEntity;
 import com.example.weddingplanner.application.user.service.domain.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 import static org.mapstruct.ReportingPolicy.IGNORE;
 

@@ -6,10 +6,7 @@ import com.example.weddingplanner.application.user.controller.dto.UserResponse;
 import com.example.weddingplanner.application.user.service.UserService;
 import com.example.weddingplanner.application.user.service.domain.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,7 +16,7 @@ class UserController {
     private final UserService userService;
     private final UserMapper userMapper;
 
-    @GetMapping
+    @PostMapping
     UserResponse create(@RequestBody CreateUserDto userDto) {
         User user = userMapper.userDtoToDomain(userDto);
         User saveUser = userService.create(user);
