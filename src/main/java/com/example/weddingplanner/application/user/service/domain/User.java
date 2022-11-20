@@ -9,7 +9,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Getter
-class User {
+public class User {
 
     Long id;
     String email;

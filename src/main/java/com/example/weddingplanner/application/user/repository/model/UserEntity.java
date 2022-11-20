@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -16,13 +17,16 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-class UserEntity {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
     Long id;
+    @NotNull
     String email;
+    @NotNull
     String firstName;
+    @NotNull
     String lastName;
     @Column(name = "phone_number", length = 12)
     String phoneNumber;
