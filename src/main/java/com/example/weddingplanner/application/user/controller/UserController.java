@@ -8,6 +8,8 @@ import com.example.weddingplanner.application.user.service.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/user")
@@ -17,7 +19,7 @@ class UserController {
     private final UserMapper userMapper;
 
     @PostMapping
-    UserResponse create(@RequestBody CreateUserDto userDto) {
+    UserResponse create(@Valid @RequestBody CreateUserDto userDto) {
         User user = userMapper.userDtoToDomain(userDto);
         User saveUser = userService.create(user);
         return userMapper.userDomainToResponse(saveUser);
